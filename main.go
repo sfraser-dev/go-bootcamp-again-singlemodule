@@ -4,8 +4,15 @@ import (
 	"fmt"
 	"math/rand"
 
-	deck "bitbucket.org/weebucket/gobootcampagain/cards/reusable"
-	odd_even "bitbucket.org/weebucket/gobootcampagain/odd_even/reusable" // we import modules which are a collection of packages
+	// A MODULE CONTAINS MULTIPLE PACAKGES (in diff sub-dirs)
+	// ONLY ONE NAMED PACKAGE ALLOWED PER FOLDER
+	// PACKAGE is a COLLECTION OF SOURCE FILES (all in same dir and all with same pkg name)
+	// Import package deck from module gobootcampagain_singlemodule's folder ./pkg/cards
+	deck "gobootcampagain_singlemodule/pkg/cards"
+	// Import package odd_even from module gobootcampagain_singlemodule's folder ./pkg/odd_even
+	odd_even "gobootcampagain_singlemodule/pkg/odd_even"
+	// Import package my_structs from module gobootcampagain_singlemodule's folder ./pkg/structs
+	my_structs "gobootcampagain_singlemodule/pkg/structs"
 )
 
 func main() {
@@ -90,4 +97,10 @@ func main() {
 	// (checking out packages / modules / go.mod and go.work, just seeing how it's done)
 	mySlice1, mySlice2 := odd_even.OddEven()
 	odd_even.PrintOddAndEven(mySlice1, mySlice2)
+
+	// structs
+	var p1 my_structs.Person
+	p1.FirstName = "Joe"
+	p1.LastName = "Bloggs"
+	fmt.Printf("p1 = %v\n", p1)
 }
