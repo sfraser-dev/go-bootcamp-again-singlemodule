@@ -12,7 +12,7 @@ import (
 	// Import package odd_even from module gobootcampagain_singlemodule's folder ./pkg/odd_even
 	odd_even "gobootcampagain_singlemodule/pkg/odd_even"
 	// Import package my_structs from module gobootcampagain_singlemodule's folder ./pkg/structs
-	my_structs "gobootcampagain_singlemodule/pkg/structs"
+	my_structs_and_pointers "gobootcampagain_singlemodule/pkg/structs_and_pointers"
 )
 
 func main() {
@@ -99,18 +99,18 @@ func main() {
 	odd_even.PrintOddAndEven(mySlice1, mySlice2)
 
 	fmt.Println("\nStructs")
-	// var p1 my_structs.Person // Go auto assigns zero "" values
+	// var p1 my_structs_and_pointers.Person // Go auto assigns zero "" values
 	// p1.FirstName = "Joe"
 	// p1.LastName = "Bloggs"
-	p1 := my_structs.PersonType1{FirstName: "joe", LastName: "bloggs"}
+	p1 := my_structs_and_pointers.PersonType1{FirstName: "joe", LastName: "bloggs"}
 	fmt.Printf("p1 = %+v\n", p1) // fieldnames printed too with %+v
 	fmt.Println("...Embedded struct...")
-	p2 := my_structs.PersonType2{FirstName: "sam", LastName: "gee", Info: my_structs.ContactInfo{Mob: 123, Addr: "ABC"}}
+	p2 := my_structs_and_pointers.PersonType2{FirstName: "sam", LastName: "gee", Info: my_structs_and_pointers.ContactInfo{Mob: 123, Addr: "ABC"}}
 	fmt.Printf("p2 = %+v\n", p2)
 	fmt.Printf("p2.Info.Mob = %+v\n", p2.Info.Mob)
 	fmt.Printf("p2.Info.Addr= %+v\n", p2.Info.Addr)
 	fmt.Println("...NO FIELDNAME embedded struct...") // helps with code reuse
-	p3 := my_structs.PersonType3{FirstName: "kay", LastName: "nab", ContactInfo: my_structs.ContactInfo{Mob: 123, Addr: "ABC"}}
+	p3 := my_structs_and_pointers.PersonType3{FirstName: "kay", LastName: "nab", ContactInfo: my_structs_and_pointers.ContactInfo{Mob: 123, Addr: "ABC"}}
 	fmt.Printf("p3 = %+v\n", p3)
 	fmt.Printf("p3.Mob = %+v\n", p3.Mob)  // helping with code reuse, INHERITANCE LIKE BEHAVOUR
 	fmt.Printf("p3.Addr= %+v\n", p3.Addr) // helping with code reuse, INHERITANCE LIKE BEHAVOUR

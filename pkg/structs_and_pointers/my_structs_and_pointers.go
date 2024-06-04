@@ -1,4 +1,4 @@
-package my_structs
+package my_structs_and_pointers
 
 import (
 	"fmt"
