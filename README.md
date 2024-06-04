@@ -4,10 +4,10 @@ Review of the review.
 
 ## Single Module in Project Root Dir
 
-Ask Bard question: "show sample of project with single go.mod in the root".
+Ask question: "show sample of project with single go.mod in the root".
 
-Absolutely! Here's a sample Go project structure with a single go.mod
-file in the root directory, demonstrating how to organize your code and manage dependencies:
+Example of Go project structure with a single go.mod
+file in the root directory, demonstrating how to organize code and manage dependencies:
 
 ```txt
 myproject/

@@ -98,9 +98,51 @@ func main() {
 	mySlice1, mySlice2 := odd_even.OddEven()
 	odd_even.PrintOddAndEven(mySlice1, mySlice2)
 
-	// structs
-	var p1 my_structs.Person
-	p1.FirstName = "Joe"
-	p1.LastName = "Bloggs"
-	fmt.Printf("p1 = %v\n", p1)
+	fmt.Println("\nStructs")
+	// var p1 my_structs.Person // Go auto assigns zero "" values
+	// p1.FirstName = "Joe"
+	// p1.LastName = "Bloggs"
+	p1 := my_structs.PersonType1{FirstName: "joe", LastName: "bloggs"}
+	fmt.Printf("p1 = %+v\n", p1) // fieldnames printed too with %+v
+	fmt.Println("...Embedded struct...")
+	p2 := my_structs.PersonType2{FirstName: "sam", LastName: "gee", Info: my_structs.ContactInfo{Mob: 123, Addr: "ABC"}}
+	fmt.Printf("p2 = %+v\n", p2)
+	fmt.Printf("p2.Info.Mob = %+v\n", p2.Info.Mob)
+	fmt.Printf("p2.Info.Addr= %+v\n", p2.Info.Addr)
+	fmt.Println("...NO FIELDNAME embedded struct...") // helps with code reuse
+	p3 := my_structs.PersonType3{FirstName: "kay", LastName: "nab", ContactInfo: my_structs.ContactInfo{Mob: 123, Addr: "ABC"}}
+	fmt.Printf("p3 = %+v\n", p3)
+	fmt.Printf("p3.Mob = %+v\n", p3.Mob)  // helping with code reuse, INHERITANCE LIKE BEHAVOUR
+	fmt.Printf("p3.Addr= %+v\n", p3.Addr) // helping with code reuse, INHERITANCE LIKE BEHAVOUR
+	fmt.Println("...Print with receiver functions...")
+	p1.Speak()
+	p2.Speak()
+	p3.Speak()
+
+	fmt.Println("\nPointers")
+	// note: dereferencing is accessing the value/obj stored at the memory location in the ptr
+	// note: ptr-rec-func is a method with a pointer receiver
+	var X int = 5
+	// var ptr *int; ptr = &X
+	ptr := &X
+	fmt.Printf("X = %+v\n", X)
+	(*ptr) += 1
+	fmt.Printf("X = %+v\n", X)
+	fmt.Println("...Pointers to Structs")
+	ptrP1 := &p1
+	// Pointer (holding addr of value/obj) used to call the ptr-rec-func ChangeName (FINE)
+	// "C/C++ sytle" POINTER passing, pointer holding addr passed, just as C/C++ does it
+	ptrP1.ChangeName("Terminator")
+	ptrP1.Speak()
+	ptrP2 := &p2
+	// I'm dereferencing the pointer ptrP2 here so actually passing p2 by value to ptr-rec-func ChangeName (FINE)
+	// Syntactic Sugar and Auto Fixing
+	// Passing struct by value, but Go knows it's a ptr-rec-func so will pass the addr of struct p2 instead
+	(*ptrP2).ChangeName("Godzilla") // passing struct p2 by value to ptr-rec-func, auto dereferenced, not copied
+	(*ptrP2).Speak()
+	// I'm straight-up passing p3 by value to ptr-rec-func ChangeName (FINE)
+	// Syntactic Sugar and Auto Fixing
+	// Passing struct by value, but Go knows it's a ptr-rec-func so will pass the addr of struct p3 instead
+	p3.ChangeName("Spiderman") // passing struct p3 by value to ptr-rec-func, auto dereferenced, not copied
+	p3.Speak()
 }
