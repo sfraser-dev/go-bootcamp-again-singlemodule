@@ -25,6 +25,6 @@ func OddEven() (myOddEvenSlice1 []int, myOddEvenSlice2[]string) {
 
 func PrintOddAndEven(mySlice1 []int, mySlice2 []string) {
 	for i := 0; i < oddEvenSliceSize; i += 1 {
-		fmt.Printf("%v is %v\n", mySlice1[i], mySlice2[i])
+		fmt.Printf("%03v is %v\n", mySlice1[i], mySlice2[i])
 	}
 }

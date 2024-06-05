@@ -13,6 +13,8 @@ import (
 	odd_even "gobootcampagain_singlemodule/pkg/odd_even"
 	// Import package my_structs from module gobootcampagain_singlemodule's folder ./pkg/structs
 	my_structs_and_pointers "gobootcampagain_singlemodule/pkg/structs_and_pointers"
+	// Import package my_maps from module gobootcampagain_singlemodule's folder ./pkg/maps
+	my_maps "gobootcampagain_singlemodule/pkg/maps"
 )
 
 func main() {
@@ -129,7 +131,7 @@ func main() {
 	fmt.Printf("X = %+v\n", X)
 	(*ptr) += 1
 	fmt.Printf("X = %+v\n", X)
-	fmt.Println("...Pointers to Structs")
+	fmt.Println("...Pointers to Structs...")
 	ptrP1 := &p1
 	// Passing pointer (holding addr of variable) used to call the ptr-rec-func ChangeName (FINE)
 	// "C/C++ sytle" POINTER passing, pointer holding addr of variable passed, just as C/C++ does it
@@ -146,4 +148,7 @@ func main() {
 	// Passing struct by value, but Go knows it's a ptr-rec-func so will pass address-reference struct p3 instead
 	p3.ChangeName("Spiderman") // passing struct p3 by value to ptr-rec-func, address-referenced, not copied
 	p3.Speak()
+
+	fmt.Println("\nMaps")
+	my_maps.CreateMaps()
 }
