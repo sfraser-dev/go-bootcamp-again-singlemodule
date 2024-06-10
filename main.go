@@ -17,6 +17,8 @@ import (
 	my_maps "gobootcampagain_singlemodule/pkg/maps"
 	// Import package interfaces from module gobootcampagain_singlemodule's folder ./pkg/interfaces
 	interfaces "gobootcampagain_singlemodule/pkg/interfaces"
+	// Import package my_http from module gobootcampagain_singlemodule's folder ./pkg/http
+	pkg_http "gobootcampagain_singlemodule/pkg/https"
 )
 
 func main() {
@@ -156,4 +158,8 @@ func main() {
 
 	fmt.Println("\nInterfaces")
 	interfaces.RunMe()
+
+	fmt.Println("\nInterfaces Google It")
+	pkg_http.GoogleIt()
+
 }

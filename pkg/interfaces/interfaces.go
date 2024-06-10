@@ -4,8 +4,9 @@ import (
 	"fmt"
 )
 
-type LanguageBot interface {
-	SayHi()
+// interface defining REQUIRED signature "menu"
+type Bot interface {
+	GetGreeting() string
 }
 
 type EnglishBot struct {
@@ -16,34 +17,33 @@ type SpanishBot struct {
 	greeting string
 }
 
-// method (has receiver) SayHi() attached to EnglishBot struct
-func (eb EnglishBot) SayHi() {
-	fmt.Println(eb.greeting)
+// method (has receiver) attached to EnglishBot struct (returns English greeting)
+func (eb EnglishBot) GetGreeting() string {
+	return eb.greeting
 }
 
-// method (has receiver) SayHi() attached to SpanishBot struct
-func (sb SpanishBot) SayHi() {
-	fmt.Println(sb.greeting)
+// method (has receiver) attached to SpanishBot struct (returns Spanish greeting)
+func (sb SpanishBot) GetGreeting() string {
+	return sb.greeting
 }
 
-// func that takes an interface as an argument
-func InterfaceAsArgument(lb LanguageBot) {
-	lb.SayHi()
+// func that takes a bot INTERFACE as an argument
+func InterfaceAsArgument(lb Bot) {
+	var uniqueGreeting string = lb.GetGreeting()
+	fmt.Println(uniqueGreeting)
 }
 
 func RunMe() {
-	// instantiate eb
+	// instantiate an english bot
 	eb := EnglishBot{
 		greeting: "Hello there!",
 	}
 
-	// instantiate sb
+	// instantiate a spanish bot
 	sb := SpanishBot{
 		greeting: "¡Hola!",
 	}
 
-	eb.SayHi()
-	sb.SayHi()
 	fmt.Println("...Interface as argument...")
 	InterfaceAsArgument(eb)
 	InterfaceAsArgument(sb)
