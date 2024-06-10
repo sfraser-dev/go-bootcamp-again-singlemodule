@@ -159,7 +159,6 @@ func main() {
 	fmt.Println("\nInterfaces")
 	interfaces.RunMe()
 
-	fmt.Println("\nInterfaces Google It")
-	pkg_http.GoogleIt()
-
+	fmt.Println("\nInterfaces Read Body HTML from Google Homepage")
+	pkg_http.GettingGoogleHomepageHTML()
 }
