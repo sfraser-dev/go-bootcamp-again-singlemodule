@@ -15,6 +15,8 @@ import (
 	my_structs_and_pointers "gobootcampagain_singlemodule/pkg/structs_and_pointers"
 	// Import package my_maps from module gobootcampagain_singlemodule's folder ./pkg/maps
 	my_maps "gobootcampagain_singlemodule/pkg/maps"
+	// Import package interfaces from module gobootcampagain_singlemodule's folder ./pkg/interfaces
+	interfaces "gobootcampagain_singlemodule/pkg/interfaces"
 )
 
 func main() {
@@ -151,4 +153,7 @@ func main() {
 
 	fmt.Println("\nMaps")
 	my_maps.CreateMaps()
+
+	fmt.Println("\nInterfaces")
+	interfaces.RunMe()
 }
