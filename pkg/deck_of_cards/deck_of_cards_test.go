@@ -91,19 +91,19 @@ func Test_newDeckOfCards(t *testing.T) {
 }
 
 func Test_saveDeckToFileAndReadDeckFromFile(t *testing.T) {
-	os.Remove("_deckTesting.log")
+	os.Remove("_deck_of_cards_testing.log")
 
 	dOut := NewDeck()
 
 	// write to file and read from file
-	dOut.WriteToFile("_deckTesting.log")
+	dOut.WriteToFile("_deck_of_cards_testing.log")
 
-	dIn := ReadFromFile("_deckTesting.log")
+	dIn := ReadFromFile("_deck_of_cards_testing.log")
 
 	if len(dIn) != 52 {
 		t.Errorf("expected the deck read from file to have 52 cards, instead it had %v", len(dIn))
 	}
 
-	os.Remove("_deckTesting.log")
+	os.Remove("_deck_of_cards_testing.log")
 
 }

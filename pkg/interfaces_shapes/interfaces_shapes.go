@@ -1,4 +1,4 @@
-package pkg_shapes
+package pkg_interfaces_shapes
 
 import (
 	"fmt"

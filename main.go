@@ -10,18 +10,20 @@ import (
 	//
 	// Import package pkg_deck from module gobootcampagain_singlemodule's folder ./pkg/deck_of_cards
 	pkg_deck "gobootcampagain_singlemodule/pkg/deck_of_cards"
+	pkg_interfaces_read_file "gobootcampagain_singlemodule/pkg/interfaces_read_file"
 	// Import package pkg_odd_even from module gobootcampagain_singlemodule's folder ./pkg/slice_fill_rand_odd_even
 	pkg_odd_even "gobootcampagain_singlemodule/pkg/slice_fill_rand_odd_even"
 	// Import package pkg_structs_and_pointers from module gobootcampagain_singlemodule's folder ./pkg/structs_and_pointers
 	pkg_structs_and_pointers "gobootcampagain_singlemodule/pkg/structs_and_pointers"
 	// Import package pkg_maps from module gobootcampagain_singlemodule's folder ./pkg/maps
 	pkg_maps "gobootcampagain_singlemodule/pkg/maps"
+	// Import package pkg_http from module gobootcampagain_singlemodule's folder ./pkg/http_get
+	pkg_http "gobootcampagain_singlemodule/pkg/http_get"
 	// Import package pkg_interfaces from module gobootcampagain_singlemodule's folder ./pkg/interfaces
 	pkg_interfaces "gobootcampagain_singlemodule/pkg/interfaces"
 	// Import package pkg_shapes from module gobootcampagain_singlemodule's folder ./pkg/interfaces_shapes
-	pkg_shapes "gobootcampagain_singlemodule/pkg/interfaces_shapes"
-	// Import package pkg_http from module gobootcampagain_singlemodule's folder ./pkg/http_get
-	pkg_http "gobootcampagain_singlemodule/pkg/http_get"
+	pkg_interfaces_shapes "gobootcampagain_singlemodule/pkg/interfaces_shapes"
+	// Import package pkg_shapes from module gobootcampagain_singlemodule's folder ./pkg/interfaces_shapes
 )
 
 func main() {
@@ -86,10 +88,10 @@ func main() {
 	tempReconHand.PrintWholeDeck()
 
 	fmt.Println("\nwrite the whole deck to file")
-	cards.WriteToFile("myfile.txt")
+	cards.WriteToFile("_deck_of_cards.log")
 
 	fmt.Println("\nread the whole deck from file")
-	cards = pkg_deck.ReadFromFile("myfile.txt")
+	cards = pkg_deck.ReadFromFile("_deck_of_cards.log")
 	cards.PrintWholeDeck()
 
 	fmt.Print("\nrandom number generator: ")
@@ -166,5 +168,8 @@ func main() {
 	pkg_http.GettingGoogleHomepageHTML()
 
 	fmt.Println("\n\nInterface assignment with shapes")
-	pkg_shapes.RunIt()
+	pkg_interfaces_shapes.RunIt()
+
+	fmt.Println("\nInterfaces read text file")
+	pkg_interfaces_read_file.RunIt()
 }
