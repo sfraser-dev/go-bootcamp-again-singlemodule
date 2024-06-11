@@ -1,4 +1,4 @@
-package pkg_deck
+package pkg_deck_of_cards
 
 import (
 	"fmt"

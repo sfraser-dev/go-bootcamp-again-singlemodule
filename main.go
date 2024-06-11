@@ -8,22 +8,30 @@ import (
 	// ONLY ONE NAMED PACKAGE ALLOWED PER FOLDER
 	// PACKAGE is a COLLECTION OF SOURCE FILES (all in same dir and all with same pkg name)
 	//
-	// Import package pkg_deck from module gobootcampagain_singlemodule's folder ./pkg/deck_of_cards
-	pkg_deck "gobootcampagain_singlemodule/pkg/deck_of_cards"
+	// Import package "pkg_deck_of_cards" AS "pkg_deck"
+	// from module gobootcampagain_singlemodule's folder ./pkg/deck_of_cards
+	pkg_deck_new_name "gobootcampagain_singlemodule/pkg/deck_of_cards"
+	// Import package "pkg_interfaces_read_file AS "pkg_interfaces_read_file"
+	// from module gobootcampagain_singlemodule's folder ./pkg/interfaces_shapes
 	pkg_interfaces_read_file "gobootcampagain_singlemodule/pkg/interfaces_read_file"
-	// Import package pkg_odd_even from module gobootcampagain_singlemodule's folder ./pkg/slice_fill_rand_odd_even
+	// Import package "pkg_slice_fill_rand_odd_even" AS "pkg_odd_even"
+	// from module gobootcampagain_singlemodule's folder ./pkg/slice_fill_rand_odd_even
 	pkg_odd_even "gobootcampagain_singlemodule/pkg/slice_fill_rand_odd_even"
-	// Import package pkg_structs_and_pointers from module gobootcampagain_singlemodule's folder ./pkg/structs_and_pointers
+	// Import package "pkg_structs_and_pointers" AS "pkg_structs_and_pointers"
+	// from module gobootcampagain_singlemodule's folder ./pkg/structs_and_pointers
 	pkg_structs_and_pointers "gobootcampagain_singlemodule/pkg/structs_and_pointers"
-	// Import package pkg_maps from module gobootcampagain_singlemodule's folder ./pkg/maps
+	// Import "package pkg_maps"
+	// from module gobootcampagain_singlemodule's folder ./pkg/maps
 	pkg_maps "gobootcampagain_singlemodule/pkg/maps"
-	// Import package pkg_http from module gobootcampagain_singlemodule's folder ./pkg/http_get
-	pkg_http "gobootcampagain_singlemodule/pkg/http_get"
-	// Import package pkg_interfaces from module gobootcampagain_singlemodule's folder ./pkg/interfaces
+	// Import "package pkg_interfaces_http_get"
+	// from module gobootcampagain_singlemodule's folder ./pkg/interfaces_http_get
+	pkg_interfaces_http_get "gobootcampagain_singlemodule/pkg/interfaces_http_get"
+	// Import "package pkg_interfaces"
+	// from module gobootcampagain_singlemodule's folder ./pkg/interfaces
 	pkg_interfaces "gobootcampagain_singlemodule/pkg/interfaces"
-	// Import package pkg_shapes from module gobootcampagain_singlemodule's folder ./pkg/interfaces_shapes
+	// Import "package pkg_shapes" AS "package pkg_shapes"
+	// from module gobootcampagain_singlemodule's folder ./pkg/interfaces_shapes
 	pkg_interfaces_shapes "gobootcampagain_singlemodule/pkg/interfaces_shapes"
-	// Import package pkg_shapes from module gobootcampagain_singlemodule's folder ./pkg/interfaces_shapes
 )
 
 func main() {
@@ -57,7 +65,7 @@ func main() {
 		}
 	*/
 
-	cards := pkg_deck.NewDeck() // new deck of cards
+	cards := pkg_deck_new_name.NewDeck() // new deck of cards
 
 	fmt.Println("\nprint the whole deck") // receiver functions are LIKE "OOP" in Go
 	cards.PrintWholeDeck()
@@ -66,11 +74,11 @@ func main() {
 	cards.PrintWholeDeck()
 
 	fmt.Println("\ndeal two hands of 5 cards")
-	hand1, remainingCards := pkg_deck.Deal(cards, 5)
+	hand1, remainingCards := pkg_deck_new_name.Deal(cards, 5)
 	fmt.Println("hand1:")
 	hand1.PrintWholeDeck()
 	fmt.Println("hand2:")
-	hand2, _ := pkg_deck.Deal(remainingCards, 5)
+	hand2, _ := pkg_deck_new_name.Deal(remainingCards, 5)
 	hand2.PrintWholeDeck()
 
 	fmt.Println("\nbyte slice interlude")
@@ -80,18 +88,18 @@ func main() {
 	fmt.Println(bs)    // [72 105 32 116 104 101 114 101]
 
 	fmt.Println("\nhand 1 to single string")
-	hand1SingleStr := pkg_deck.ToSingleString(hand1, ":")
+	hand1SingleStr := pkg_deck_new_name.ToSingleString(hand1, ":")
 	fmt.Println(hand1SingleStr)
 
 	fmt.Println("\nhand 1 reconstructed to string slice")
-	tempReconHand := pkg_deck.FromSingleString(hand1SingleStr, pkg_deck.MySeperator)
+	tempReconHand := pkg_deck_new_name.FromSingleString(hand1SingleStr, pkg_deck_new_name.MySeperator)
 	tempReconHand.PrintWholeDeck()
 
 	fmt.Println("\nwrite the whole deck to file")
 	cards.WriteToFile("_deck_of_cards.log")
 
 	fmt.Println("\nread the whole deck from file")
-	cards = pkg_deck.ReadFromFile("_deck_of_cards.log")
+	cards = pkg_deck_new_name.ReadFromFile("_deck_of_cards.log")
 	cards.PrintWholeDeck()
 
 	fmt.Print("\nrandom number generator: ")
@@ -165,7 +173,7 @@ func main() {
 	pkg_interfaces.RunMe()
 
 	fmt.Println("\nInterfaces Read Body HTML from Google Homepage")
-	pkg_http.GettingGoogleHomepageHTML()
+	pkg_interfaces_http_get.GettingGoogleHomepageHTML()
 
 	fmt.Println("\n\nInterface assignment with shapes")
 	pkg_interfaces_shapes.RunIt()

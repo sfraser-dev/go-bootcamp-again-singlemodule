@@ -1,4 +1,4 @@
-package pkg_http
+package pkg_interfaces_http_get
 
 import (
 	"io"

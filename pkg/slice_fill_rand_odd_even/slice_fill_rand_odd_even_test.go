@@ -1,4 +1,4 @@
-package pkg_odd_even
+package pkg_slice_fill_rand_odd_even
 
 import "testing"
 
