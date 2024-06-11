@@ -9,6 +9,8 @@ import (
 	// PACKAGE is a COLLECTION OF SOURCE FILES (all in same dir and all with same pkg name)
 	// Import package deck from module gobootcampagain_singlemodule's folder ./pkg/cards
 	deck "gobootcampagain_singlemodule/pkg/cards"
+	my_shapes "gobootcampagain_singlemodule/pkg/shapes"
+
 	// Import package odd_even from module gobootcampagain_singlemodule's folder ./pkg/odd_even
 	odd_even "gobootcampagain_singlemodule/pkg/odd_even"
 	// Import package my_structs from module gobootcampagain_singlemodule's folder ./pkg/structs
@@ -17,8 +19,9 @@ import (
 	my_maps "gobootcampagain_singlemodule/pkg/maps"
 	// Import package interfaces from module gobootcampagain_singlemodule's folder ./pkg/interfaces
 	interfaces "gobootcampagain_singlemodule/pkg/interfaces"
-	// Import package my_http from module gobootcampagain_singlemodule's folder ./pkg/http
+	// Import package my_http from module gobootcampagain_singlemodule's folder ./pkg/https
 	pkg_http "gobootcampagain_singlemodule/pkg/https"
+	// Import package my_shapes from module gobootcampagain_singlemodule's folder ./pkg/shapes
 )
 
 func main() {
@@ -161,4 +164,7 @@ func main() {
 
 	fmt.Println("\nInterfaces Read Body HTML from Google Homepage")
 	pkg_http.GettingGoogleHomepageHTML()
+
+	fmt.Println("\n\nInterface assignment with shapes")
+	my_shapes.RunIt()
 }
