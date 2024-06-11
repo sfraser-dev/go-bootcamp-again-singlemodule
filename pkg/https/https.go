@@ -7,14 +7,18 @@ import (
 	"os"
 )
 
-type DataStruct struct {
-	TheData []byte
+type dataStruct struct {
+	theData []byte
 }
 
 func GettingGoogleHomepageHTML() {
+	var (
+		res *http.Response
+		err error
+	)
+
 	// get info from Google homepage
-	res, err := http.Get("http://www.google.com")
-	if err != nil {
+	if res, err = http.Get("http://www.google.com"); err != nil {
 		log.Fatalln("Error: ", err)
 	}
 
@@ -45,14 +49,14 @@ func GettingGoogleHomepageHTML() {
 	// res.Body.Close()
 	//
 	//// Read from res.Body to my own byte slice then write byte slice explicitly to stdout
-	ds := DataStruct{
-		TheData: make([]byte, 32*1024), // a way to create a slice of specific size
+	ds := dataStruct{
+		theData: make([]byte, 32*1024), // a way to create a slice of specific size
 	}
-	if n, _ := res.Body.Read(ds.TheData); n >= (32 * 1024) {
+	if n, _ := res.Body.Read(ds.theData); n >= (32 * 1024) {
 		log.Fatalln(err)
 	}
 	res.Body.Close()
-	if _, err := io.WriteString(os.Stdout, string(ds.TheData)); err != nil {
+	if _, err := io.WriteString(os.Stdout, string(ds.theData)); err != nil {
 		log.Fatalln(err)
 	}
 }
