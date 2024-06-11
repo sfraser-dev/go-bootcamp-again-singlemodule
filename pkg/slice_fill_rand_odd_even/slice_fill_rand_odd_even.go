@@ -9,7 +9,9 @@ const (
 	oddEvenSliceSize int = 10
 )
 
-func OddEven() (myOddEvenSlice1 []int, myOddEvenSlice2[]string) {
+// fill a slice with random values (between 0 and 99 inclusive)
+// report if each random value is odd or even
+func OddEven() (myOddEvenSlice1 []int, myOddEvenSlice2 []string) {
 	for i := 0; i < oddEvenSliceSize; i += 1 {
 		myOddEvenSlice1 = append(myOddEvenSlice1, rand.Intn(100))
 	}

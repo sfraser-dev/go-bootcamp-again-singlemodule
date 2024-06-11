@@ -8,10 +8,10 @@ import (
 	// ONLY ONE NAMED PACKAGE ALLOWED PER FOLDER
 	// PACKAGE is a COLLECTION OF SOURCE FILES (all in same dir and all with same pkg name)
 	//
-	// Import package pkg_deck from module gobootcampagain_singlemodule's folder ./pkg/cards
-	pkg_deck "gobootcampagain_singlemodule/pkg/cards"
+	// Import package pkg_deck from module gobootcampagain_singlemodule's folder ./pkg/deck_of_cards
+	pkg_deck "gobootcampagain_singlemodule/pkg/deck_of_cards"
 	// Import package pkg_odd_even from module gobootcampagain_singlemodule's folder ./pkg/odd_even
-	pkg_odd_even "gobootcampagain_singlemodule/pkg/odd_even"
+	pkg_odd_even "gobootcampagain_singlemodule/pkg/slice_fill_rand_odd_even"
 	// Import package pkg_structs_and_pointers from module gobootcampagain_singlemodule's folder ./pkg/structs
 	pkg_structs_and_pointers "gobootcampagain_singlemodule/pkg/structs_and_pointers"
 	// Import package pkg_maps from module gobootcampagain_singlemodule's folder ./pkg/maps
@@ -19,7 +19,7 @@ import (
 	// Import package pkg_interfaces from module gobootcampagain_singlemodule's folder ./pkg/interfaces
 	pkg_interfaces "gobootcampagain_singlemodule/pkg/interfaces"
 	// Import package pkg_http from module gobootcampagain_singlemodule's folder ./pkg/https
-	pkg_http "gobootcampagain_singlemodule/pkg/https"
+	pkg_http "gobootcampagain_singlemodule/pkg/http_get"
 	// Import package pkg_shapes from module gobootcampagain_singlemodule's folder ./pkg/shapes
 	pkg_shapes "gobootcampagain_singlemodule/pkg/shapes"
 )
