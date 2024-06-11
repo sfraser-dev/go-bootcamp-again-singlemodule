@@ -1,5 +1,8 @@
 # Go programming
 
+Having a single module (in the project) root directory is the **standard approach.**
+Having multiple modules in a project is generally not recommended (unless perhaps a very huge project)
+
 Review of the review.
 
 ## Single Module in Project Root Dir
