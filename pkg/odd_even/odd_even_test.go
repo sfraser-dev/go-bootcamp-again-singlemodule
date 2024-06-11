@@ -1,4 +1,4 @@
-package odd_even
+package pkg_odd_even
 
 import "testing"
 

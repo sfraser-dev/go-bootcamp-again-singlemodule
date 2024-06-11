@@ -1,4 +1,4 @@
-package deck
+package pkg_deck
 
 import (
 	"fmt"

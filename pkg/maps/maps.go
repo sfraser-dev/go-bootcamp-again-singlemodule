@@ -1,4 +1,4 @@
-package my_maps
+package pkg_maps
 
 import (
 	"fmt"

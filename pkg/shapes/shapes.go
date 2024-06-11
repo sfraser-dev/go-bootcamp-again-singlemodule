@@ -1,4 +1,4 @@
-package my_shapes
+package pkg_shapes
 
 import (
 	"fmt"

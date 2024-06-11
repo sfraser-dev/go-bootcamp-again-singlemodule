@@ -7,21 +7,21 @@ import (
 	// A MODULE CONTAINS MULTIPLE PACAKGES (in diff sub-dirs)
 	// ONLY ONE NAMED PACKAGE ALLOWED PER FOLDER
 	// PACKAGE is a COLLECTION OF SOURCE FILES (all in same dir and all with same pkg name)
-	// Import package deck from module gobootcampagain_singlemodule's folder ./pkg/cards
-	deck "gobootcampagain_singlemodule/pkg/cards"
-	my_shapes "gobootcampagain_singlemodule/pkg/shapes"
-
-	// Import package odd_even from module gobootcampagain_singlemodule's folder ./pkg/odd_even
-	odd_even "gobootcampagain_singlemodule/pkg/odd_even"
-	// Import package my_structs from module gobootcampagain_singlemodule's folder ./pkg/structs
-	my_structs_and_pointers "gobootcampagain_singlemodule/pkg/structs_and_pointers"
-	// Import package my_maps from module gobootcampagain_singlemodule's folder ./pkg/maps
-	my_maps "gobootcampagain_singlemodule/pkg/maps"
-	// Import package interfaces from module gobootcampagain_singlemodule's folder ./pkg/interfaces
-	interfaces "gobootcampagain_singlemodule/pkg/interfaces"
-	// Import package my_http from module gobootcampagain_singlemodule's folder ./pkg/https
+	//
+	// Import package pkg_deck from module gobootcampagain_singlemodule's folder ./pkg/cards
+	pkg_deck "gobootcampagain_singlemodule/pkg/cards"
+	// Import package pkg_odd_even from module gobootcampagain_singlemodule's folder ./pkg/odd_even
+	pkg_odd_even "gobootcampagain_singlemodule/pkg/odd_even"
+	// Import package pkg_structs_and_pointers from module gobootcampagain_singlemodule's folder ./pkg/structs
+	pkg_structs_and_pointers "gobootcampagain_singlemodule/pkg/structs_and_pointers"
+	// Import package pkg_maps from module gobootcampagain_singlemodule's folder ./pkg/maps
+	pkg_maps "gobootcampagain_singlemodule/pkg/maps"
+	// Import package pkg_interfaces from module gobootcampagain_singlemodule's folder ./pkg/interfaces
+	pkg_interfaces "gobootcampagain_singlemodule/pkg/interfaces"
+	// Import package pkg_http from module gobootcampagain_singlemodule's folder ./pkg/https
 	pkg_http "gobootcampagain_singlemodule/pkg/https"
-	// Import package my_shapes from module gobootcampagain_singlemodule's folder ./pkg/shapes
+	// Import package pkg_shapes from module gobootcampagain_singlemodule's folder ./pkg/shapes
+	pkg_shapes "gobootcampagain_singlemodule/pkg/shapes"
 )
 
 func main() {
@@ -55,7 +55,7 @@ func main() {
 		}
 	*/
 
-	cards := deck.NewDeck() // new deck of cards
+	cards := pkg_deck.NewDeck() // new deck of cards
 
 	fmt.Println("\nprint the whole deck") // receiver functions are LIKE "OOP" in Go
 	cards.PrintWholeDeck()
@@ -64,11 +64,11 @@ func main() {
 	cards.PrintWholeDeck()
 
 	fmt.Println("\ndeal two hands of 5 cards")
-	hand1, remainingCards := deck.Deal(cards, 5)
+	hand1, remainingCards := pkg_deck.Deal(cards, 5)
 	fmt.Println("hand1:")
 	hand1.PrintWholeDeck()
 	fmt.Println("hand2:")
-	hand2, _ := deck.Deal(remainingCards, 5)
+	hand2, _ := pkg_deck.Deal(remainingCards, 5)
 	hand2.PrintWholeDeck()
 
 	fmt.Println("\nbyte slice interlude")
@@ -78,18 +78,18 @@ func main() {
 	fmt.Println(bs)    // [72 105 32 116 104 101 114 101]
 
 	fmt.Println("\nhand 1 to single string")
-	hand1SingleStr := deck.ToSingleString(hand1, ":")
+	hand1SingleStr := pkg_deck.ToSingleString(hand1, ":")
 	fmt.Println(hand1SingleStr)
 
 	fmt.Println("\nhand 1 reconstructed to string slice")
-	tempReconHand := deck.FromSingleString(hand1SingleStr, deck.MySeperator)
+	tempReconHand := pkg_deck.FromSingleString(hand1SingleStr, pkg_deck.MySeperator)
 	tempReconHand.PrintWholeDeck()
 
 	fmt.Println("\nwrite the whole deck to file")
 	cards.WriteToFile("myfile.txt")
 
 	fmt.Println("\nread the whole deck from file")
-	cards = deck.ReadFromFile("myfile.txt")
+	cards = pkg_deck.ReadFromFile("myfile.txt")
 	cards.PrintWholeDeck()
 
 	fmt.Print("\nrandom number generator: ")
@@ -101,25 +101,25 @@ func main() {
 	fmt.Println(myList[:3])                // slice notation is [start,end), start inclusive, end exclusive
 
 	fmt.Println("\nOddEven")
-	// calling Exported function OddEven() from package odd_even in module
+	// calling Exported function OddEven() from package pkg_odd_even in module
 	// bitbucket.org/weebucket/gobootcampagain/odd_even/reusable which is in another directory
 	// (checking out packages / modules / go.mod and go.work, just seeing how it's done)
-	mySlice1, mySlice2 := odd_even.OddEven()
-	odd_even.PrintOddAndEven(mySlice1, mySlice2)
+	mySlice1, mySlice2 := pkg_odd_even.OddEven()
+	pkg_odd_even.PrintOddAndEven(mySlice1, mySlice2)
 
 	fmt.Println("\nStructs")
-	// var p1 my_structs_and_pointers.Person // Go auto assigns zero "" values
+	// var p1 pkg_structs_and_pointers.Person // Go auto assigns zero "" values
 	// p1.FirstName = "Joe"
 	// p1.LastName = "Bloggs"
-	p1 := my_structs_and_pointers.PersonType1{FirstName: "joe", LastName: "bloggs"}
+	p1 := pkg_structs_and_pointers.PersonType1{FirstName: "joe", LastName: "bloggs"}
 	fmt.Printf("p1 = %+v\n", p1) // fieldnames printed too with %+v
 	fmt.Println("...Embedded struct...")
-	p2 := my_structs_and_pointers.PersonType2{FirstName: "sam", LastName: "gee", Info: my_structs_and_pointers.ContactInfo{Mob: 123, Addr: "ABC"}}
+	p2 := pkg_structs_and_pointers.PersonType2{FirstName: "sam", LastName: "gee", Info: pkg_structs_and_pointers.ContactInfo{Mob: 123, Addr: "ABC"}}
 	fmt.Printf("p2 = %+v\n", p2)
 	fmt.Printf("p2.Info.Mob = %+v\n", p2.Info.Mob)
 	fmt.Printf("p2.Info.Addr= %+v\n", p2.Info.Addr)
 	fmt.Println("...NO FIELDNAME embedded struct...") // helps with code reuse
-	p3 := my_structs_and_pointers.PersonType3{FirstName: "kay", LastName: "nab", ContactInfo: my_structs_and_pointers.ContactInfo{Mob: 123, Addr: "ABC"}}
+	p3 := pkg_structs_and_pointers.PersonType3{FirstName: "kay", LastName: "nab", ContactInfo: pkg_structs_and_pointers.ContactInfo{Mob: 123, Addr: "ABC"}}
 	fmt.Printf("p3 = %+v\n", p3)
 	fmt.Printf("p3.Mob = %+v\n", p3.Mob)  // helping with code reuse, INHERITANCE LIKE BEHAVOUR
 	fmt.Printf("p3.Addr= %+v\n", p3.Addr) // helping with code reuse, INHERITANCE LIKE BEHAVOUR
@@ -157,14 +157,14 @@ func main() {
 	p3.Speak()
 
 	fmt.Println("\nMaps")
-	my_maps.CreateMaps()
+	pkg_maps.CreateMaps()
 
 	fmt.Println("\nInterfaces")
-	interfaces.RunMe()
+	pkg_interfaces.RunMe()
 
 	fmt.Println("\nInterfaces Read Body HTML from Google Homepage")
 	pkg_http.GettingGoogleHomepageHTML()
 
 	fmt.Println("\n\nInterface assignment with shapes")
-	my_shapes.RunIt()
+	pkg_shapes.RunIt()
 }

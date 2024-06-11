@@ -1,4 +1,4 @@
-package interfaces
+package pkg_interfaces
 
 import (
 	"fmt"
