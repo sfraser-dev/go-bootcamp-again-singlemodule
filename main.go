@@ -10,28 +10,28 @@ import (
 	//
 	// Import package "pkg_deck_of_cards" AS "pkg_deck"
 	// from module gobootcampagain_singlemodule's folder ./pkg/deck_of_cards
-	pkg_deck_new_name "go_bootcamp_again_singlemodule/pkg/deck_of_cards"
+	pkg_deck_new_name "go-bootcamp-again-singlemodule/pkg/deck_of_cards"
 	// Import package "pkg_interfaces_read_file AS "pkg_interfaces_read_file"
 	// from module gobootcampagain_singlemodule's folder ./pkg/interfaces_shapes
-	pkg_interfaces_read_file "go_bootcamp_again_singlemodule/pkg/interfaces_read_file"
+	pkg_interfaces_read_file "go-bootcamp-again-singlemodule/pkg/interfaces_read_file"
 	// Import package "pkg_slice_fill_rand_odd_even" AS "pkg_odd_even"
 	// from module gobootcampagain_singlemodule's folder ./pkg/slice_fill_rand_odd_even
-	pkg_odd_even "go_bootcamp_again_singlemodule/pkg/slice_fill_rand_odd_even"
+	pkg_odd_even "go-bootcamp-again-singlemodule/pkg/slice_fill_rand_odd_even"
 	// Import package "pkg_structs_and_pointers" AS "pkg_structs_and_pointers"
 	// from module gobootcampagain_singlemodule's folder ./pkg/structs_and_pointers
-	pkg_structs_and_pointers "go_bootcamp_again_singlemodule/pkg/structs_and_pointers"
+	pkg_structs_and_pointers "go-bootcamp-again-singlemodule/pkg/structs_and_pointers"
 	// Import "package pkg_maps"
 	// from module gobootcampagain_singlemodule's folder ./pkg/maps
-	pkg_maps "go_bootcamp_again_singlemodule/pkg/maps"
+	pkg_maps "go-bootcamp-again-singlemodule/pkg/maps"
 	// Import "package pkg_interfaces_http_get"
 	// from module gobootcampagain_singlemodule's folder ./pkg/interfaces_http_get
-	pkg_interfaces_http_get "go_bootcamp_again_singlemodule/pkg/interfaces_http_get"
+	pkg_interfaces_http_get "go-bootcamp-again-singlemodule/pkg/interfaces_http_get"
 	// Import "package pkg_interfaces"
 	// from module gobootcampagain_singlemodule's folder ./pkg/interfaces
-	pkg_interfaces "go_bootcamp_again_singlemodule/pkg/interfaces"
+	pkg_interfaces "go-bootcamp-again-singlemodule/pkg/interfaces"
 	// Import "package pkg_shapes" AS "package pkg_shapes"
 	// from module gobootcampagain_singlemodule's folder ./pkg/interfaces_shapes
-	pkg_interfaces_shapes "go_bootcamp_again_singlemodule/pkg/interfaces_shapes"
+	pkg_interfaces_shapes "go-bootcamp-again-singlemodule/pkg/interfaces_shapes"
 )
 
 func main() {
